@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Ansible Playbook') {
             steps {
-                ansiblePlaybook playbook: 'deploy_nginx.yml', inventory: 'hosts'
+                ansiblePlaybook playbook: 'deploy_nginx.yml', inventory: 'inventory.ini'
             }
         }
     }
