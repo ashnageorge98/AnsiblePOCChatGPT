@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Clone the Repository') {
             steps {
                 git credentialsId: 'github-pat', branch: 'main', url: 'https://github.com/ashnageorge98/ansible-web-deploy.git'
             }
