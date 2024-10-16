@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/ashnageorge98/ansible-web-deploy.git'
+            }
+        }
+
+        stage('Run Ansible Playbook') {
+            steps {
+                ansiblePlaybook playbook: 'deploy_nginx.yml', inventory: 'hosts'
+            }
+        }
+    }
+}
